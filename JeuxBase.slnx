@@ -1,0 +1,4 @@
+<Solution>
+    <Project Name="JeuxLibrary" Path="JeuxLibrary\JeuxLibrary.csproj" Active="true" />
+    <Project Name="JeuxTests" Path="JeuxTests\JeuxTests.csproj" Active="true" />
+</Solution>
