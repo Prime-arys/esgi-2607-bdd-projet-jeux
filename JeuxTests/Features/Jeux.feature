@@ -52,5 +52,5 @@ Scenario: Test, end game
     When I update the score of the current player by 5
     Then the score of Bob should be 5
     When the game is ended
-    Then the game should be over 
+    Then the game should be over
     And the winner should be Alice

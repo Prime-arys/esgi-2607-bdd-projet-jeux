@@ -1,5 +1,6 @@
 using JeuxLibrary;
 using JeuxLibrary.Commun;
+using JeuxLibrary.DefaultTestGame;
 
 namespace JeuxBase.StepDefinitions
 {
@@ -8,24 +9,30 @@ namespace JeuxBase.StepDefinitions
     {
         // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
-        private Jeux _target = null!;
-        private List<Player> _players = new();
+        private readonly GameContext _context;
+
+        public JeuxStepDefinitions(GameContext context)
+        {
+            _context = context;
+        }
+
+        private Jeux _target => _context.Target;
 
         [Given(@"the following players:")]
         public void GivenTheFollowingPlayers(Table table)
         {
-            _players = new List<Player>();
+            _context.Players = new List<Player>();
             foreach (var row in table.Rows)
             {
-                _players.Add(new Player { Name = row["Name"] });
+                _context.Players.Add(new Player { Name = row["Name"] });
             }
         }
 
         [When(@"I create a new game ""(.*)""")]
         public void WhenICreateANewGame(GameType gameType)
         {
-            _target = new Jeux(gameType);
-            _target.CreateGame(_players);
+            _context.Target = new Jeux(gameType);
+            _target.CreateGame(_context.Players);
         }
 
         [When(@"the turn is ended")]
@@ -37,13 +44,13 @@ namespace JeuxBase.StepDefinitions
         [When(@"I update the score of the current player by (.*)")]
         public void WhenIUpdateTheScoreOfTheCurrentPlayerBy(int score)
         {
-            _target.GameManager?.AddScore(score);
+            _target.GameManager?.GetGame().AddScore(score);
         }
 
         [When(@"the game is ended")]
         public void WhenTheGameIsEnded()
         {
-            _target.GameManager?.EndGame();
+            _target.GameManager?.GetGame().ForceEndGame();
         }
 
         [Then(@"the score of (.*) should be (.*)")]
@@ -71,13 +78,13 @@ namespace JeuxBase.StepDefinitions
         [Then(@"the game should be over")]
         public void ThenTheGameShouldBeOver()
         {
-            Assert.IsTrue(_target.GameManager?.IsGameOver ?? false);
+            Assert.IsTrue(_target.GameManager?.GetGame().status == GameStatus.Finished, "The game is not over.");
         }
 
         [Then(@"the winner should be (.*)")]
         public void ThenTheWinnerShouldBe(string expectedWinnerName)
         {
-            var winner = _target.GameManager?._winner;
+            var winner = _target.GameManager?.GetGame().GetWinner();
             Assert.IsNotNull(winner, "No winner found.");
             Assert.AreEqual(expectedWinnerName, winner.Name);
         }

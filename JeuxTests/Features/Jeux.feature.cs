@@ -141,14 +141,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
                             "Name"});
-                table1.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Alice"});
-                table1.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Bob"});
 #line 6
-    await testRunner.GivenAsync("the following players:", ((string)(null)), table1, "Given ");
+    await testRunner.GivenAsync("the following players:", ((string)(null)), table4, "Given ");
 #line hidden
 #line 10
     await testRunner.WhenAsync("I create a new game \"DefaultTestGame\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -181,14 +181,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table5 = new global::Reqnroll.Table(new string[] {
                             "Name"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Alice"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Bob"});
 #line 15
-    await testRunner.GivenAsync("the following players:", ((string)(null)), table2, "Given ");
+    await testRunner.GivenAsync("the following players:", ((string)(null)), table5, "Given ");
 #line hidden
 #line 19
     await testRunner.WhenAsync("I create a new game \"DefaultTestGame\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -233,14 +233,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table6 = new global::Reqnroll.Table(new string[] {
                             "Name"});
-                table3.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Alice"});
-                table3.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Bob"});
 #line 27
-    await testRunner.GivenAsync("the following players:", ((string)(null)), table3, "Given ");
+    await testRunner.GivenAsync("the following players:", ((string)(null)), table6, "Given ");
 #line hidden
 #line 31
     await testRunner.WhenAsync("I create a new game \"DefaultTestGame\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -291,14 +291,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table7 = new global::Reqnroll.Table(new string[] {
                             "Name"});
-                table4.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Alice"});
-                table4.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Bob"});
 #line 42
-    await testRunner.GivenAsync("the following players:", ((string)(null)), table4, "Given ");
+    await testRunner.GivenAsync("the following players:", ((string)(null)), table7, "Given ");
 #line hidden
 #line 46
     await testRunner.WhenAsync("I create a new game \"DefaultTestGame\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");

@@ -1,15 +1,14 @@
 using JeuxLibrary.Commun;
 
-public class DefaultTestGameRules : IGame
-{
+namespace JeuxLibrary.DefaultTestGame;
 
-    private Manager manager;
-    public DefaultTestGameRules(Manager manager)
+public class DefaultTestGameRules : Game
+{
+    public DefaultTestGameRules(Manager manager) : base(manager)
     {
-        this.manager = manager;
     }
 
-    public void StartGame()
+    public override void StartGame()
     {
         // Logique de démarrage du jeu
         // Par exemple, initialiser les scores des joueurs à zéro
@@ -20,9 +19,9 @@ public class DefaultTestGameRules : IGame
     }
     
  
-    public Player? GetWinner()
+    public override Player? GetWinner()
     {
-        if (manager.IsGameOver)
+        if (manager.GetGame<DefaultTestGameRules>().status == GameStatus.Finished)
         {
             // jouer avec le score le plus élevé gagne
             return manager.players.OrderByDescending(p => p.Score).FirstOrDefault();

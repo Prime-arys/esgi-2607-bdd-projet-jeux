@@ -15,8 +15,7 @@ public class Jeux
 
     public void CreateGame(List<Player> players)
     {
-        GameManager = new Manager(Type);
-        GameManager.SetPlayers(players);
+        GameManager = new Manager(Type, players);
         GameManager.StartGame();
     }
 }
