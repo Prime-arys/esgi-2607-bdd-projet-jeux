@@ -138,7 +138,7 @@ namespace JeuxBase.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/TicTacToe.feature.ndjson", 5);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/TicTacToe.feature.ndjson", 17);
         }
         
         [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("Create a new game")]
@@ -152,7 +152,7 @@ namespace JeuxBase.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Create a new game", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 12
+#line 14
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -165,7 +165,7 @@ namespace JeuxBase.Features
 #line 4
   await this.FeatureBackgroundAsync();
 #line hidden
-#line 13
+#line 15
     await testRunner.ThenAsync("the game should be created with 2 players", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table9 = new global::Reqnroll.Table(new string[] {
@@ -188,7 +188,7 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 14
+#line 16
     await testRunner.AndAsync("the game board should look like:", ((string)(null)), table9, "And ");
 #line hidden
             }
@@ -206,7 +206,7 @@ namespace JeuxBase.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Test, action and turn order", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 20
+#line 22
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -219,10 +219,10 @@ namespace JeuxBase.Features
 #line 4
   await this.FeatureBackgroundAsync();
 #line hidden
-#line 21
+#line 23
     await testRunner.ThenAsync("the current player should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 22
+#line 24
     await testRunner.WhenAsync("the current player plays at position (1, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table10 = new global::Reqnroll.Table(new string[] {
@@ -245,16 +245,16 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 23
+#line 25
     await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table10, "Then ");
 #line hidden
-#line 28
+#line 30
     await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 31
     await testRunner.ThenAsync("the current player should be Bob", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 32
     await testRunner.WhenAsync("the current player plays at position (2, B)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
@@ -277,7 +277,7 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 31
+#line 33
     await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table11, "Then ");
 #line hidden
             }
@@ -295,7 +295,7 @@ namespace JeuxBase.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Test, win condition", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 37
+#line 41
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -308,10 +308,10 @@ namespace JeuxBase.Features
 #line 4
   await this.FeatureBackgroundAsync();
 #line hidden
-#line 38
+#line 42
     await testRunner.ThenAsync("the current player should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 39
+#line 43
     await testRunner.WhenAsync("the current player plays at position (1, B)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
@@ -334,16 +334,16 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 40
+#line 44
     await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table12, "Then ");
 #line hidden
-#line 45
+#line 49
     await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 46
+#line 50
     await testRunner.ThenAsync("the current player should be Bob", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 47
+#line 51
     await testRunner.WhenAsync("the current player plays at position (2, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
@@ -366,25 +366,25 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 48
+#line 52
     await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table13, "Then ");
-#line hidden
-#line 53
-    await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 54
-    await testRunner.WhenAsync("the current player plays at position (1, C)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 55
-    await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 56
-    await testRunner.WhenAsync("the current player plays at position (2, C)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 57
     await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 58
+    await testRunner.WhenAsync("the current player plays at position (1, C)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 59
+    await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 60
+    await testRunner.WhenAsync("the current player plays at position (2, C)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 61
+    await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 62
     await testRunner.WhenAsync("the current player plays at position (1, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
@@ -407,14 +407,405 @@ namespace JeuxBase.Features
                             ".",
                             ".",
                             "."});
-#line 59
+#line 63
     await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table14, "Then ");
 #line hidden
-#line 64
+#line 68
     await testRunner.ThenAsync("the game should be over", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 65
+#line 69
     await testRunner.AndAsync("the winner should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("Three symbols in a line win the game, whatever the line")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Three symbols in a line win the game, whatever the line")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("top row", "A1, A2, B1, B2, C1", "3", null, DisplayName="Three symbols in a line win the game, whatever the line(top row,A1, A2, B1, B2, C" +
+            "1,3)")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("left column", "A1, B1, A2, B2, A3", "4", null, DisplayName="Three symbols in a line win the game, whatever the line(left column,A1, B1, A2, B" +
+            "2, A3,4)")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("main diagonal", "A1, B1, B2, C1, C3", "5", null, DisplayName="Three symbols in a line win the game, whatever the line(main diagonal,A1, B1, B2," +
+            " C1, C3,5)")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("anti diagonal", "C1, A1, B2, A2, A3", "6", null, DisplayName="Three symbols in a line win the game, whatever the line(anti diagonal,C1, A1, B2," +
+            " A2, A3,6)")]
+        public async global::System.Threading.Tasks.Task ThreeSymbolsInALineWinTheGameWhateverTheLine(string line, string moves, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("line", line);
+            argumentsOfScenario.Add("moves", moves);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Three symbols in a line win the game, whatever the line", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 73
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 74
+    await testRunner.WhenAsync(string.Format("the players take turns playing {0}", moves), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 75
+    await testRunner.ThenAsync("the game should be over", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 76
+    await testRunner.AndAsync("the winner should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("The player holding O wins just the same")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The player holding O wins just the same")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task ThePlayerHoldingOWinsJustTheSame()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "7";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("The player holding O wins just the same", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 87
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 88
+    await testRunner.WhenAsync("the players take turns playing A1, B1, A2, B2, C3, B3", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table15 = new global::Reqnroll.Table(new string[] {
+                            "row",
+                            "A",
+                            "B",
+                            "C"});
+                table15.AddRow(new string[] {
+                            "1",
+                            "X",
+                            "O",
+                            "."});
+                table15.AddRow(new string[] {
+                            "2",
+                            "X",
+                            "O",
+                            "."});
+                table15.AddRow(new string[] {
+                            "3",
+                            ".",
+                            "O",
+                            "X"});
+#line 89
+    await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table15, "Then ");
+#line hidden
+#line 94
+    await testRunner.AndAsync("the game should be over", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 95
+    await testRunner.AndAsync("the winner should be Bob", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("A full board with no alignment is a draw")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("A full board with no alignment is a draw")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task AFullBoardWithNoAlignmentIsADraw()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "8";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A full board with no alignment is a draw", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 97
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 98
+    await testRunner.WhenAsync("the players take turns playing A1, B1, C1, B2, A2, C2, B3, A3, C3", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table16 = new global::Reqnroll.Table(new string[] {
+                            "row",
+                            "A",
+                            "B",
+                            "C"});
+                table16.AddRow(new string[] {
+                            "1",
+                            "X",
+                            "O",
+                            "X"});
+                table16.AddRow(new string[] {
+                            "2",
+                            "X",
+                            "O",
+                            "O"});
+                table16.AddRow(new string[] {
+                            "3",
+                            "O",
+                            "X",
+                            "X"});
+#line 99
+    await testRunner.ThenAsync("the game board should look like:", ((string)(null)), table16, "Then ");
+#line hidden
+#line 104
+    await testRunner.AndAsync("the game should be a draw", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("A square can only be taken once")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("A square can only be taken once")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task ASquareCanOnlyBeTakenOnce()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "9";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A square can only be taken once", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 108
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 109
+    await testRunner.WhenAsync("the current player plays at position (1, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 110
+    await testRunner.AndAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 111
+    await testRunner.AndAsync("the current player plays at position (1, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 112
+    await testRunner.ThenAsync("the move should be rejected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+                global::Reqnroll.Table table17 = new global::Reqnroll.Table(new string[] {
+                            "row",
+                            "A",
+                            "B",
+                            "C"});
+                table17.AddRow(new string[] {
+                            "1",
+                            "X",
+                            ".",
+                            "."});
+                table17.AddRow(new string[] {
+                            "2",
+                            ".",
+                            ".",
+                            "."});
+                table17.AddRow(new string[] {
+                            "3",
+                            ".",
+                            ".",
+                            "."});
+#line 113
+    await testRunner.AndAsync("the game board should look like:", ((string)(null)), table17, "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("A move must designate a square of the board")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("A move must designate a square of the board")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("4", "A", "the board has 3 rows", "10", null, DisplayName="A move must designate a square of the board(4,A,the board has 3 rows,10)")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute("1", "D", "the board has 3 columns", "11", null, DisplayName="A move must designate a square of the board(1,D,the board has 3 columns,11)")]
+        public async global::System.Threading.Tasks.Task AMoveMustDesignateASquareOfTheBoard(string row, string column, string whyItIsOffTheBoard, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("row", row);
+            argumentsOfScenario.Add("column", column);
+            argumentsOfScenario.Add("why it is off the board", whyItIsOffTheBoard);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A move must designate a square of the board", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 119
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 120
+    await testRunner.WhenAsync(string.Format("the current player plays at position ({0}, {1})", row, column), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 121
+    await testRunner.ThenAsync("the move should be rejected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("No move can be played once the game is won")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("No move can be played once the game is won")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task NoMoveCanBePlayedOnceTheGameIsWon()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "12";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("No move can be played once the game is won", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 128
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 129
+    await testRunner.WhenAsync("the players take turns playing A1, A2, B1, B2, C1", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 130
+    await testRunner.ThenAsync("the winner should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 131
+    await testRunner.WhenAsync("the turn is ended", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 132
+    await testRunner.AndAsync("the current player plays at position (3, A)", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 133
+    await testRunner.ThenAsync("the move should be rejected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 134
+    await testRunner.AndAsync("the winner should be Alice", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("The markers are handed out once and for all")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The markers are handed out once and for all")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task TheMarkersAreHandedOutOnceAndForAll()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "13";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("The markers are handed out once and for all", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 136
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+#line 137
+    await testRunner.WhenAsync("with Bob playing with marker X", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 138
+    await testRunner.ThenAsync("the last action should be rejected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute("TicTacToe is played by exactly two players")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("TicTacToe is played by exactly two players")]
+        [global::Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Jeux TicTacToe")]
+        public async global::System.Threading.Tasks.Task TicTacToeIsPlayedByExactlyTwoPlayers()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "14";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("TicTacToe is played by exactly two players", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 140
+  this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 4
+  await this.FeatureBackgroundAsync();
+#line hidden
+                global::Reqnroll.Table table18 = new global::Reqnroll.Table(new string[] {
+                            "Name"});
+                table18.AddRow(new string[] {
+                            "Alice"});
+                table18.AddRow(new string[] {
+                            "Bob"});
+                table18.AddRow(new string[] {
+                            "Charlie"});
+#line 141
+    await testRunner.GivenAsync("the following players:", ((string)(null)), table18, "Given ");
+#line hidden
+#line 146
+    await testRunner.WhenAsync("I create a new game \"TicTacToe\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 147
+    await testRunner.ThenAsync("the last action should be rejected", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

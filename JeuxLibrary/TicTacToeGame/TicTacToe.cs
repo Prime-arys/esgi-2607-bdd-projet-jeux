@@ -62,14 +62,14 @@ public sealed class TicTacToe : Game
     /// La main ne change pas ici : c'est Manager.NextPlayer() qui termine le tour.
     public void Play(Case position)
     {
-        if (_turnCount >= Case.Taille * Case.Taille)
+        if (status != GameStatus.InProgress)
         {
-            throw new InvalidOperationException("Le plateau est plein. La partie est terminée.");
+            throw new CoupInvalideException("La partie est terminée : plus aucun coup ne peut être joué.");
         }
 
         if (_plateau[position.IndiceLigne, position.IndiceColonne] != Symbole.Vide)
         {
-            throw new ArgumentException($"La case {position} est déjà occupée.");
+            throw new CoupInvalideException($"La case {position} est déjà occupée.");
         }
 
         _plateau[position.IndiceLigne, position.IndiceColonne] = _playerSymbols[

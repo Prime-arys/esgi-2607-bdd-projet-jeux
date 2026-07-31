@@ -27,13 +27,32 @@ namespace JeuxBase.StepDefinitions
         {
             var player = _context.Players.FirstOrDefault(p => p.Name == playerName);
             Assert.IsNotNull(player, $"Player '{playerName}' not found.");
-            Game.ChoseSymbole(player, symbole);
+            _context.Execute(() => Game.ChoseSymbole(player, symbole));
         }
 
         [When(@"the current player plays at position \((.*), (.*)\)")]
         public void WhenTheCurrentPlayerPlaysAtPosition(int ligne, string colonne)
         {
-            Game.Play(Case.Analyser($"{colonne}{ligne}"));
+            _context.Execute(() => Game.Play(Case.Analyser($"{colonne}{ligne}")));
+        }
+
+        [When(@"the players take turns playing (.*)")]
+        public void WhenThePlayersTakeTurnsPlaying(string coups)
+        {
+            _context.Execute(() =>
+            {
+                var premierCoup = true;
+                foreach (var coup in coups.Split(','))
+                {
+                    if (!premierCoup)
+                    {
+                        _context.Target.GameManager!.NextPlayer();
+                    }
+
+                    premierCoup = false;
+                    Game.Play(Case.Analyser(coup));
+                }
+            });
         }
 
         [Then(@"the game board should look like:")]
@@ -53,6 +72,19 @@ namespace JeuxBase.StepDefinitions
                     Assert.AreEqual(expectedValue, actualValue, $"Mismatch at position ({i}, {j}).");
                 }
             }
+        }
+
+        [Then(@"the game should be a draw")]
+        public void ThenTheGameShouldBeADraw()
+        {
+            Assert.AreEqual(GameStatus.Finished, Game.status, "The game is not over.");
+            Assert.IsNull(Game.GetWinner(), "A winner was declared on a drawn board.");
+        }
+
+        [Then(@"the move should be rejected")]
+        public void ThenTheMoveShouldBeRejected()
+        {
+            _context.AssertRejected("Coup");
         }
 
         /// Notation du plateau telle qu'écrite dans les scénarios : "." pour une case vide.
