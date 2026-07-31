@@ -28,11 +28,14 @@ namespace JeuxBase.StepDefinitions
             }
         }
 
+        /// La création passe par Execute : le nombre de joueurs fait partie des règles
+        /// d'un jeu, donc « on ne peut pas créer cette partie » est un scénario à part
+        /// entière et non un plantage de l'outillage de test.
         [When(@"I create a new game ""(.*)""")]
         public void WhenICreateANewGame(GameType gameType)
         {
             _context.Target = new Jeux(gameType);
-            _target.CreateGame(_context.Players);
+            _context.Execute(() => _target.CreateGame(_context.Players));
         }
 
         [When(@"the turn is ended")]
@@ -81,6 +84,18 @@ namespace JeuxBase.StepDefinitions
             Assert.IsTrue(_target.GameManager?.GetGame().status == GameStatus.Finished, "The game is not over.");
         }
 
+        [Then(@"the game should not be over")]
+        public void ThenTheGameShouldNotBeOver()
+        {
+            Assert.AreNotEqual(GameStatus.Finished, _target.GameManager?.GetGame().status, "The game is over.");
+        }
+
+        [Then(@"there should be no winner yet")]
+        public void ThenThereShouldBeNoWinnerYet()
+        {
+            Assert.IsNull(_target.GameManager?.GetGame().GetWinner(), "A winner was declared too early.");
+        }
+
         [Then(@"the winner should be (.*)")]
         public void ThenTheWinnerShouldBe(string expectedWinnerName)
         {
@@ -88,6 +103,13 @@ namespace JeuxBase.StepDefinitions
             Assert.IsNotNull(winner, "No winner found.");
             Assert.AreEqual(expectedWinnerName, winner.Name);
         }
-        
+
+        [Then(@"the last action should be rejected")]
+        public void ThenTheLastActionShouldBeRejected()
+        {
+            _context.AssertRejected("Dernière action");
+        }
+
+
     }
 }

@@ -1,5 +1,6 @@
 using JeuxLibrary.TicTacToeGame;
 using JeuxLibrary.DefaultTestGame;
+using JeuxLibrary.Darts;
 
 namespace JeuxLibrary.Commun;
 
@@ -17,8 +18,7 @@ public class Manager
         _game = type switch
         {
             GameType.TicTacToe => new TicTacToe(this),
-            // GameType.Mastermind => new MastermindRules(this),
-            // GameType.Darts => new DartsRules(this),
+            GameType.Darts => new DartsGame(this),
             GameType.DefaultTestGame => new DefaultTestGameRules(this),
             _ => throw new ArgumentException("Invalid game type")
         };
